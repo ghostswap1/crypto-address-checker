@@ -1,0 +1,149 @@
+{
+  "valid": [
+    {
+      "coin": "btc",
+      "address": "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
+      "type": "Legacy (P2PKH)"
+    },
+    {
+      "coin": "btc",
+      "address": "3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy",
+      "type": "Script (P2SH)"
+    },
+    {
+      "coin": "btc",
+      "address": "bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq",
+      "type": "SegWit (P2WPKH)"
+    },
+    {
+      "coin": "btc",
+      "address": "bc1qrp33g0q5c5txsp9arysrx4k6zdkfs4nce4xj0gdcccefvpysxf3qccfmv3",
+      "type": "SegWit (P2WSH)"
+    },
+    {
+      "coin": "btc",
+      "address": "bc1p0xlxvlhemja6c4dqv22uapctqupfhlxm9h8z3k2e72q4k9hcz7vqzk5jj0",
+      "type": "Taproot (P2TR)"
+    },
+    {
+      "coin": "xmr",
+      "address": "44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A",
+      "type": "Standard address"
+    },
+    {
+      "coin": "xmr",
+      "address": "8931Z5X34weG6wqTZaLST5ZNpcLqHSgi4XUGqqDCWAHVeNjxsnLgXS4Ey41kFBxy9dbcx1UgbVg3uhsGTnbupfLkCRr7cT9",
+      "type": "Subaddress"
+    },
+    {
+      "coin": "xmr",
+      "address": "4D51FjUbGBiJQmQ2X8KPabDApAuKgv8cL6AezqrCdB27UGuhnkNJKJ6Af5Faj1bzLr38sxNjyd7wHPSA662zqSv5cWHJ4BAryHCLBVpnBg",
+      "type": "Integrated address"
+    },
+    {
+      "coin": "zec",
+      "address": "t1MBWGjMUv9MTfjEGHcYvHXy5P66EragMs2",
+      "type": "Transparent (t1)"
+    },
+    {
+      "coin": "zec",
+      "address": "t3MTcG3TLuq28RysECX1f8KA8Gv33yQe9Sk",
+      "type": "Transparent script (t3)"
+    },
+    {
+      "coin": "zec",
+      "address": "zs1zf4u6hycyjx80jf7yem7xe96yygmxvv2dtdrf6up6j93fzkjjrmht387wp9ku5f0x509qu980gf",
+      "type": "Shielded Sapling (zs)"
+    },
+    {
+      "coin": "zec",
+      "address": "u1z3lxplqfs52trqs3qjfgh60agejuu6kzskgw8squwrsh5uyy9he3gf7uhrvjeheyayrxs7hr5y6wjxyg53dq9pc6ne2g0gkj6xzje8v4y9ucyyjgq44v7vqalzm5uaytl2nnls77y4rdmuk3v3w5p0y0k60004l69psqcfr6x36s52ncg4",
+      "type": "Unified address (u1)"
+    },
+    {
+      "coin": "zec",
+      "address": "tex1euv0xhfhjqv8eu9ms7hxezcup0q3y6c5unss8y",
+      "type": "Transparent-source-only (TEX)"
+    },
+    {
+      "coin": "eth",
+      "address": "0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed",
+      "type": "EVM account"
+    },
+    {
+      "coin": "eth",
+      "address": "0x3418c8B8201eCbFAF35B7999D4b21175F4DF4B11",
+      "type": "EVM account"
+    },
+    {
+      "coin": "ltc",
+      "address": "LiGg3qNcb1no1MFjLEDNyQex8zS3zTPzVV",
+      "type": "Legacy (P2PKH)"
+    },
+    {
+      "coin": "ltc",
+      "address": "MWXEDb1o61FRLFTwLinFMxTVmVbmseM1Rv",
+      "type": "Script (P2SH)"
+    },
+    {
+      "coin": "ltc",
+      "address": "ltc1q9mq6slnje3stmm0xxyctk272k4key66tk4sw9p",
+      "type": "SegWit (P2WPKH)"
+    },
+    {
+      "coin": "trx",
+      "address": "TL73dMepxXx4oxhcw8YpPs245kngdaoc13",
+      "type": "TRON account"
+    },
+    {
+      "coin": "doge",
+      "address": "DUCgM4BBUZTfRkYpNehDGxHVeER4EzE45M",
+      "type": "Legacy (P2PKH)"
+    },
+    {
+      "coin": "dash",
+      "address": "Xrjt9wbN7PU7TAhD89L3xABfK7v1LjBghv",
+      "type": "Legacy (P2PKH)"
+    },
+    {
+      "coin": "bch",
+      "address": "bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a",
+      "type": "CashAddr (P2PKH)"
+    },
+    {
+      "coin": "bch",
+      "address": "bitcoincash:ppm2qsznhks23z7629mms6s4cwef74vcwvn0h829pq",
+      "type": "CashAddr (P2SH)"
+    },
+    {
+      "coin": "xrp",
+      "address": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+      "type": "Classic address"
+    },
+    {
+      "coin": "xlm",
+      "address": "GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN7",
+      "type": "Stellar account"
+    },
+    {
+      "coin": "ton",
+      "address": "EQDtFpEwcFAEcRe5mLVh2N6C0x-_hJEM7W61_JLnSF74p4q2",
+      "type": "Bounceable address"
+    },
+    {
+      "coin": "ton",
+      "address": "UQBamoqjbzi1_6pbum2qqKjqwSbRrZ-n8ghPrJLUo3H_NG9S",
+      "type": "Non-bounceable address"
+    },
+    {
+      "coin": "ada",
+      "address": "addr1qx2fxv2umyhttkxyxp8x0dlpdt3k6cwng5pxj3jhsydzer3n0d3vllmyqwsx5wktcd8cc3sq835lu7drv2xwl2wywfgse35a3x",
+      "type": "Base address"
+    },
+    {
+      "coin": "sol",
+      "address": "4FxHwaeEYmXgNX4YuuYt9oQj5R6FZV6tpvDgCpJx4AC9",
+      "type": "Solana account"
+    }
+  ]
+}

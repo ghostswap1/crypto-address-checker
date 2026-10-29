@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crypto Address Checker: Validate BTC, XMR, ZEC, ETH Addresses | GhostSwap</title>
+<meta name="description" content="Free crypto address checker. Verify Bitcoin, Monero, Zcash, Ethereum, Litecoin, TRON, Solana and more addresses with real checksum checks. Runs in your browser, open source.">
+<link rel="canonical" href="https://ghostswap.io/tools/crypto-address-checker/">
+<meta name="robots" content="index, follow, max-snippet:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GhostSwap">
+<meta property="og:title" content="Crypto Address Checker | GhostSwap">
+<meta property="og:description" content="Check a Bitcoin, Monero, Zcash or Ethereum address before you send. Real checksum checks, runs in your browser, open source.">
+<meta property="og:url" content="https://ghostswap.io/tools/crypto-address-checker/">
+<meta property="og:image" content="https://ghostswap.io/wp-content/uploads/2024/10/cropped-ghost-swap-logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@GhostSwap_io">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://ghostswap.io data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://ghostswap.io/tools/crypto-address-checker/#app",
+      "name": "Crypto Address Checker",
+      "url": "https://ghostswap.io/tools/crypto-address-checker/",
+      "description": "Free, open-source tool that validates cryptocurrency addresses with real checksum checks. It runs entirely in the browser and sends nothing to a server.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any (web browser)",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "license": "https://opensource.org/licenses/MIT",
+      "codeRepository": "https://github.com/ghostswap1/crypto-address-checker",
+      "publisher": { "@type": "Organization", "name": "GhostSwap", "url": "https://ghostswap.io/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "GhostSwap", "item": "https://ghostswap.io/" },
+        { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://ghostswap.io/tools/" },
+        { "@type": "ListItem", "position": 3, "name": "Crypto Address Checker", "item": "https://ghostswap.io/tools/crypto-address-checker/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I check if a crypto address is valid?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Paste the address into the checker. It decodes the address and recomputes its built-in checksum (Base58Check for Bitcoin, Bech32 for SegWit, Keccak-256 for Monero, EIP-55 for Ethereum). If one character is wrong, the checksum no longer matches and the address is shown as invalid." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a valid address mean my funds will arrive?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. A valid result means the address is correctly formed for that coin. It does not prove who owns it, and it cannot tell you whether the receiving service supports that network or address type. Always check the network as well as the address." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my address sent anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The checker runs entirely in your browser. The page makes no network requests while checking, and the code is open source on GitHub so anyone can confirm it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my Zcash u1 or zs address show a warning?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Unified (u1) and shielded Sapling (zs) addresses are valid Zcash addresses, but many exchanges and instant swap services, including GhostSwap, pay ZEC only to a transparent address (t1 or t3). Use your wallet's transparent address for the payout, then shield the ZEC after it arrives." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I check a Monero address?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Paste it into the checker. A Monero address is 95 characters (106 for an integrated address) and starts with 4 for a standard address or 8 for a subaddress. The checker decodes Monero's Base58 and verifies the Keccak-256 checksum, and it also tells you whether the address is for mainnet, stagenet or testnet." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{--bg:#08071B;--card:#12112b;--card2:#1A1C2C;--line:#2a2950;--text:#f3f1ff;--muted:#a9a6cf;--pink:#F960D3;--purple:#C742F7;--violet:#8b5cf6;--ok:#34d399;--bad:#f87171;--warn:#fbbf24}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Roboto,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--pink)}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+header.top img{height:36px;width:auto;display:block}
+header.top nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:15px}
+header.top nav a:hover{color:var(--text)}
+.crumbs{font-size:14px;color:var(--muted);margin:8px 0 0}
+.crumbs a{color:var(--muted)}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:12px 0 10px}
+h2{font-size:24px;margin:44px 0 12px}
+h3{font-size:18px;margin:22px 0 6px}
+.lead{color:var(--muted);font-size:18px;margin:0 0 24px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+label{display:block;font-size:14px;color:var(--muted);margin:0 0 6px}
+textarea,select{width:100%;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:12px;font:15px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+textarea{min-height:84px;resize:vertical;word-break:break-all}
+textarea:focus,select:focus{outline:2px solid var(--violet);outline-offset:1px}
+.row{display:grid;grid-template-columns:1fr 220px;gap:12px;margin-top:12px}
+select{font-family:inherit}
+button{background:linear-gradient(90deg,var(--purple),var(--pink));color:#fff;border:0;border-radius:10px;padding:12px 18px;font-family:inherit;font-weight:700;font-size:16px;line-height:1;cursor:pointer;min-height:46px}
+button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.privacy{font-size:14px;color:var(--muted);margin:12px 0 0}
+.result{margin-top:18px;border-radius:12px;padding:16px;border:1px solid var(--line);background:var(--card2);display:none}
+.result.show{display:block}
+.result.ok{border-color:var(--ok)}
+.result.bad{border-color:var(--bad)}
+.result .verdict{font-weight:700;font-size:18px;margin:0 0 8px}
+.result.ok .verdict{color:var(--ok)}
+.result.bad .verdict{color:var(--bad)}
+.result dl{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:8px 0 0;font-size:15px}
+.result dt{color:var(--muted)}
+.result dd{margin:0}
+.result ul{margin:10px 0 0;padding-left:20px}
+.result li{margin:4px 0}
+.result li.warn{color:var(--warn)}
+.result .also{font-size:14px;color:var(--muted);margin-top:10px}
+.result .cta{display:inline-block;margin-top:12px;font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:500}
+.scroll{overflow-x:auto}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:var(--card2);padding:1px 5px;border-radius:5px}
+.faq details{border-bottom:1px solid var(--line);padding:12px 0}
+.faq summary{cursor:pointer;font-weight:600}
+.faq p{color:var(--muted);margin:8px 0 0}
+.gh{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:12px}
+footer{color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:56px;padding:22px 0 40px}
+@media (max-width:620px){.row{grid-template-columns:1fr}header.top nav a.hide-sm{display:none}.result dl{grid-template-columns:1fr}.result dt{margin-top:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a href="https://ghostswap.io/" aria-label="GhostSwap home"><img src="https://ghostswap.io/wp-content/uploads/2024/10/cropped-ghost-swap-logo-300x100.png" alt="GhostSwap" width="108" height="36"></a>
+    <nav><a href="https://ghostswap.io/exchange/">Exchange</a><a class="hide-sm" href="https://ghostswap.io/blog/">Blog</a><a href="https://github.com/ghostswap1/crypto-address-checker">GitHub</a></nav>
+  </header>
+
+  <p class="crumbs"><a href="https://ghostswap.io/">GhostSwap</a> › Tools › Crypto Address Checker</p>
+  <h1>Crypto Address Checker</h1>
+  <p class="lead">Check a Bitcoin, Monero, Zcash, Ethereum or other crypto address before you send. The checker recomputes the address's own checksum, so a single wrong character is caught.</p>
+
+  <section class="tool" aria-label="Address checker">
+    <form id="form" novalidate>
+      <label for="addr">Address</label>
+      <textarea id="addr" name="addr" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="Paste an address, e.g. bc1q… or 4… or t1…"></textarea>
+      <div class="row">
+        <div>
+          <label for="coin">Coin</label>
+          <select id="coin" name="coin"><option value="auto">Auto-detect</option></select>
+        </div>
+        <div style="display:flex;align-items:flex-end"><button type="submit" style="width:100%">Check address</button></div>
+      </div>
+    </form>
+    <p class="privacy">🔒 Runs entirely in your browser. Your address is never sent to GhostSwap or anyone else. <a href="https://github.com/ghostswap1/crypto-address-checker">Read the code</a>.</p>
+    <div id="result" class="result" role="status" aria-live="polite"></div>
+  </section>
+
+  <h2>Supported coins and formats</h2>
+  <div class="scroll">
+  <table>
+    <thead><tr><th>Coin</th><th>Formats checked</th><th>Checksum</th></tr></thead>
+    <tbody>
+      <tr><td>Bitcoin (BTC)</td><td>Legacy <code>1…</code>, P2SH <code>3…</code>, SegWit <code>bc1q…</code>, Taproot <code>bc1p…</code></td><td>Base58Check, Bech32, Bech32m</td></tr>
+      <tr><td>Monero (XMR)</td><td>Standard <code>4…</code>, subaddress <code>8…</code>, integrated; mainnet, stagenet, testnet</td><td>Keccak-256</td></tr>
+      <tr><td>Zcash (ZEC)</td><td>Transparent <code>t1…</code> <code>t3…</code>, Sapling <code>zs1…</code>, unified <code>u1…</code>, TEX <code>tex1…</code></td><td>Base58Check, Bech32, Bech32m</td></tr>
+      <tr><td>Ethereum and EVM chains (ETH, BNB Smart Chain, Polygon, Arbitrum, Optimism, Base, Avalanche C-Chain, ERC-20 tokens)</td><td><code>0x…</code></td><td>EIP-55 (mixed case)</td></tr>
+      <tr><td>Litecoin (LTC)</td><td><code>L…</code>, <code>M…</code>, <code>3…</code>, <code>ltc1…</code></td><td>Base58Check, Bech32</td></tr>
+      <tr><td>TRON (TRX, TRC-20 USDT)</td><td><code>T…</code></td><td>Base58Check</td></tr>
+      <tr><td>Solana (SOL, SPL tokens)</td><td>Base58 public key</td><td>None (format only)</td></tr>
+      <tr><td>Dogecoin (DOGE)</td><td><code>D…</code>, <code>9…</code>, <code>A…</code></td><td>Base58Check</td></tr>
+      <tr><td>Dash (DASH)</td><td><code>X…</code>, <code>7…</code></td><td>Base58Check</td></tr>
+      <tr><td>Bitcoin Cash (BCH)</td><td>CashAddr <code>bitcoincash:q…</code>, legacy</td><td>CashAddr, Base58Check</td></tr>
+      <tr><td>XRP (XRP)</td><td>Classic <code>r…</code></td><td>Base58Check</td></tr>
+      <tr><td>Stellar (XLM)</td><td><code>G…</code></td><td>CRC-16</td></tr>
+      <tr><td>TON (TON)</td><td><code>EQ…</code>, <code>UQ…</code>, raw <code>0:…</code></td><td>CRC-16</td></tr>
+      <tr><td>Cardano (ADA)</td><td>Shelley <code>addr1…</code></td><td>Bech32</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>How the checker works</h2>
+  <p>Most crypto addresses carry a checksum: a few bytes computed from the rest of the address. The checker decodes the address, recomputes that checksum and compares it. A typo, a missing character or a swapped letter breaks the match, so the address is flagged before you send anything.</p>
+  <ul>
+    <li><strong>Bitcoin, Litecoin, Dogecoin, Dash, TRON, XRP, Zcash t-addresses:</strong> Base58Check with a double SHA-256 checksum, plus the version byte that says which coin and address type it is.</li>
+    <li><strong>SegWit and Taproot:</strong> Bech32 and Bech32m checksums, including the witness version and program length rules.</li>
+    <li><strong>Monero:</strong> Monero's block Base58 and a Keccak-256 checksum, plus the network byte (mainnet, stagenet or testnet).</li>
+    <li><strong>Ethereum and EVM chains:</strong> the EIP-55 checksum hidden in the mix of capital letters. An all-lowercase address has no checksum, so the checker warns you.</li>
+  </ul>
+  <p><strong>What it can't tell you:</strong> a valid address is correctly formed, but that doesn't prove who owns it. It also can't tell whether the service you're sending from supports that network. An EVM address looks the same on Ethereum and BNB Smart Chain, so always pick the right network too.</p>
+
+  <h2>Swapping to this address?</h2>
+  <p>GhostSwap is a no-KYC crypto exchange: no account, no email, no ID. Check your payout address here, then swap, for example <a href="https://ghostswap.io/exchange/btc-xmr/">BTC to XMR</a>, <a href="https://ghostswap.io/exchange/eth-xmr/">ETH to XMR</a>, <a href="https://ghostswap.io/exchange/ltc-xmr/">LTC to XMR</a> or <a href="https://ghostswap.io/exchange/btc-zec/">BTC to ZEC</a>. For Zcash payouts, use a transparent <code>t1</code> or <code>t3</code> address.</p>
+
+  <h2>Frequently asked questions</h2>
+  <div class="faq">
+    <details open><summary>How do I check if a crypto address is valid?</summary><p>Paste the address into the checker. It decodes the address and recomputes its built-in checksum (Base58Check for Bitcoin, Bech32 for SegWit, Keccak-256 for Monero, EIP-55 for Ethereum). If one character is wrong, the checksum no longer matches and the address is shown as invalid.</p></details>
+    <details><summary>Does a valid address mean my funds will arrive?</summary><p>No. A valid result means the address is correctly formed for that coin. It does not prove who owns it, and it cannot tell you whether the receiving service supports that network or address type. Always check the network as well as the address.</p></details>
+    <details><summary>Is my address sent anywhere?</summary><p>No. The checker runs entirely in your browser. The page makes no network requests while checking, and the code is open source on GitHub so anyone can confirm it.</p></details>
+    <details><summary>Why does my Zcash u1 or zs address show a warning?</summary><p>Unified (u1) and shielded Sapling (zs) addresses are valid Zcash addresses, but many exchanges and instant swap services, including GhostSwap, pay ZEC only to a transparent address (t1 or t3). Use your wallet's transparent address for the payout, then shield the ZEC after it arrives.</p></details>
+    <details><summary>How do I check a Monero address?</summary><p>Paste it into the checker. A Monero address is 95 characters (106 for an integrated address) and starts with 4 for a standard address or 8 for a subaddress. The checker decodes Monero's Base58 and verifies the Keccak-256 checksum, and it also tells you whether the address is for mainnet, stagenet or testnet.</p></details>
+  </div>
+
+  <h2>Open source</h2>
+  <div class="gh">
+    <div>The checker is a small, dependency-free JavaScript library under the MIT license. Use it in your own wallet, bot or website. Source and tests: <a href="https://github.com/ghostswap1/crypto-address-checker">github.com/ghostswap1/crypto-address-checker</a>.</div>
+  </div>
+
+  <footer>Made by <a href="https://ghostswap.io/">GhostSwap</a>, a no-KYC crypto exchange. This tool checks address format and checksum only. It is provided as is, without warranty.</footer>
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

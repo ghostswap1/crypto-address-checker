@@ -1,0 +1,18 @@
+{
+  "name": "@ghostswapio/crypto-address-checker",
+  "version": "1.0.0",
+  "description": "Offline, dependency-free crypto address validator for Bitcoin, Monero, Zcash, Ethereum/EVM, Litecoin, TRON, Solana and more. Real checksum checks, no network calls.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": { ".": "./src/index.js" },
+  "files": ["src", "README.md", "LICENSE"],
+  "scripts": {
+    "test": "node --test",
+    "build:web": "node scripts/build-web.js"
+  },
+  "keywords": ["crypto", "address", "validator", "bitcoin", "monero", "zcash", "ethereum", "eip55", "bech32", "checksum"],
+  "homepage": "https://ghostswap.io/tools/crypto-address-checker/",
+  "repository": { "type": "git", "url": "git+https://github.com/ghostswap1/crypto-address-checker.git" },
+  "license": "MIT",
+  "engines": { "node": ">=18" }
+}
